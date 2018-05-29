@@ -1,0 +1,29 @@
+{
+  "name": "modulescollection",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "es6-promise": "^4.2.4",
+    "koa": "latest",
+    "koa-static": "latest",
+    "requirejs": "^2.3.5",
+    "systemjs": "^0.21.3"
+  },
+  "devDependencies": {
+    "jsdoc": "~3.5.5",
+    "shx": "^0.2.2"
+  },
+  "engines": {
+    "node": ">= 8.x"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "postinstall": "npm run build-system && npm run build-requirejs && npm run build-es6promise",
+    "build-system": "npm run build-system-dev && npm run build-system-production",
+    "build-system-dev": "shx cp -f node_modules/systemjs/dist/system.js public/scripts/build/system.js",
+    "build-system-production": "shx cp -f node_modules/systemjs/dist/system-production.js public/scripts/build/system-production.js",
+    "build-requirejs": "shx cp -f node_modules/requirejs/require.js public/scripts/build/require.js",
+    "build-es6promise": "shx cp -f node_modules/es6-promise/dist/es6-promise.auto.js public/scripts/build/es6-promise.auto.js"
+  }
+}
