@@ -4,6 +4,7 @@
   "main": "app.js",
   "dependencies": {
     "es6-promise": "^4.2.4",
+    "jquery": "^3.3.1",
     "koa": "latest",
     "koa-static": "latest",
     "requirejs": "^2.3.5",
@@ -19,11 +20,12 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "postinstall": "npm run build-system && npm run build-requirejs && npm run build-es6promise",
+    "postinstall": "npm run build-system && npm run build-requirejs && npm run build-es6promise && npm run build-jquery",
     "build-system": "npm run build-system-dev && npm run build-system-production",
     "build-system-dev": "shx cp -f node_modules/systemjs/dist/system.js public/scripts/build/system.js",
     "build-system-production": "shx cp -f node_modules/systemjs/dist/system-production.js public/scripts/build/system-production.js",
     "build-requirejs": "shx cp -f node_modules/requirejs/require.js public/scripts/build/require.js",
-    "build-es6promise": "shx cp -f node_modules/es6-promise/dist/es6-promise.auto.js public/scripts/build/es6-promise.auto.js"
+    "build-es6promise": "shx cp -f node_modules/es6-promise/dist/es6-promise.auto.js public/scripts/build/es6-promise.auto.js",
+    "build-jquery": "shx cp -f node_modules/jquery/dist/jquery.min.js public/scripts/build/jquery.min.js"
   }
 }

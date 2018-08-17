@@ -29,8 +29,6 @@ app.use(async (ctx, next) => {
   console.log(output);
 });
 
-// TODO - Lookup the async JS 'keyword'
-
 app.use(serve('public', {extensions: ['js', 'css']}));
 app.use(serve('pages', {extensions: ['html']}));
 
